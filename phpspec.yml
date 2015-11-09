@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: Mayoralty
-        psr4_prefix: Mayoralty
-        src_path: app
