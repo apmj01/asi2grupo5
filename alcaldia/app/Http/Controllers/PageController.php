@@ -36,4 +36,9 @@ class PageController extends Controller
     return view('mercado_solicitudes');
    }
 
+    public function registro(){
+
+    return view('registro');
+   }
+
 }

@@ -37,7 +37,11 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        return view('panel');
+        \Alcaldia\usuario::create([
+
+''
+
+            ]);
     }
 
     /**
@@ -48,7 +52,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
