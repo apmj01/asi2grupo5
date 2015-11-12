@@ -16,7 +16,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $users = \Alcaldia\Core_Usuario::All();
+        return view('usuario.index', compact('users'));
     }
 
     /**
@@ -26,7 +27,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuario.create');
+        
     }
 
     /**
@@ -37,11 +38,20 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        \Alcaldia\usuario::create([
 
-''
+   \Alcaldia\Core_Usuario::create([
 
-            ]);
+    'nombre' => $request['firstname'], 
+    'apellido' => $request['lastname'], 
+    'usuario' => $request['username'], 
+    'clave' => bcrypt($request['password']), 
+    'email' => $request['email'],
+    'estado' => $request['estado'],
+    'core_role_id' => $request['rol'],
+   ]); 
+
+   return 'Usuario Registrado';
+   
     }
 
     /**
@@ -52,7 +62,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        
+       
     }
 
     /**

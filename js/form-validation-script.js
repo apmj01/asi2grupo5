@@ -9,7 +9,7 @@ var Script = function () {
         $("#commentForm").validate();
 
         // validate signup form on keyup and submit
-        $("#signupForm").validate({
+       $("#signupForm").validate({
             rules: {
                 firstname: "required",
                 lastname: "required",
@@ -34,26 +34,39 @@ var Script = function () {
                     required: "#newsletter:checked",
                     minlength: 2
                 },
-                agree: "required"
+                estado: "required",
+                rol: "required"
             },
             messages: {
-                firstname: "Please enter your firstname",
-                lastname: "Please enter your lastname",
+                //Please enter your firstname
+                firstname: "Por favor ingrese su nombre",
+                //Please enter your lastname
+                lastname: "Por favor ingrese su apellido",
                 username: {
-                    required: "Please enter a username",
-                    minlength: "Your username must consist of at least 2 characters"
+                    //Please enter a username
+                    required: "Por favor ingrese un usuario",
+                    //Your username must consist of at least 2 characters
+                    minlength: "Su nombre de usuario debe tener al menos 2 caracteres"
                 },
                 password: {
-                    required: "Please provide a password",
-                    minlength: "Your password must be at least 5 characters long"
+                    //Please provide a password
+                    required: "Por favor ingrese su contraseña",
+                    //Your password must be at least 5 characters long
+                    minlength: "Su contraseña debe tener al menos 8 caracteres"
                 },
                 confirm_password: {
-                    required: "Please provide a password",
-                    minlength: "Your password must be at least 5 characters long",
-                    equalTo: "Please enter the same password as above"
+                     //Please provide a password
+                    required: "Por favor ingrese su contraseña",
+                     //Your password must be at least 5 characters long
+                    minlength: "Su contraseña debe tener al menos 8 caracteres",
+                    //Please enter the same password as above
+                    equalTo: "Por favor, introduzca la misma contraseña que arriba"
                 },
-                email: "Please enter a valid email address",
-                agree: "Please accept our policy"
+                //Please enter a valid email address
+                email: "Por favor, introduce una dirección de correo electrónico válida",
+                //Please accept our policy
+                estado: "Por favor, seleccione un estado de usuario",
+                rol: "Por favor, seleccione un rol de usuario"
             }
         });
 

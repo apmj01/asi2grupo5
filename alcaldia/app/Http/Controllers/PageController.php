@@ -21,9 +21,12 @@ class PageController extends Controller
     return view('index');
    }
 
+   
+
     public function panel(){
 
     return view('panel');
+
    }
 
     public function mercado(){
@@ -38,7 +41,14 @@ class PageController extends Controller
 
     public function registro(){
 
-    return view('registro');
+    return view('usuario/registro');
    }
+
+     public function buscar_usuario(){
+
+    return view('buscar_usuario');
+   }
+
+   
 
 }

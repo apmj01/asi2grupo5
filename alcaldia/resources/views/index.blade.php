@@ -19,7 +19,7 @@
             </div>
         </div>
      
-            {!!Form::open(['route'=>'usuario.store', 'method'=>'POST'])!!}
+            {!!Form::open(['url' => 'panel', 'method'=>'POST'])!!}
 
                 <div class="metro double-size green">
                     <div class="input-append lock-input">

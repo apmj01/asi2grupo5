@@ -17,9 +17,11 @@
    {!!Html::style('css/style.css')!!}
    {!!Html::style('css/style-responsive.css')!!}
    {!!Html::style('css/style-default.css')!!}
+
+
+   
    {!!Html::style('assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css')!!}
    {!!Html::style('assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css')!!}
-
     {!!Html::style('assets/fancybox/source/jquery.fancybox.css')!!}
     {!!Html::style('assets/uniform/css/uniform.default.css')!!}
     {!!Html::style('assets/chosen-bootstrap/chosen/chosen.css')!!}
@@ -86,8 +88,129 @@
        <!-- END TOP NAVIGATION BAR -->
    </div>
    <!-- END HEADER -->
-  
-      @yield('content')
+   <!-- BEGIN CONTAINER -->
+   <div id="container" class="row-fluid">
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar-scroll">
+        <div id="sidebar" class="nav-collapse collapse">
+
+         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+         <div class="navbar-inverse">
+            <form class="navbar-search visible-phone">
+               <input type="text" class="search-query" placeholder="Search" />
+            </form>
+         </div>
+         <!-- END RESPONSIVE QUICK SEARCH FORM -->
+         <!-- BEGIN SIDEBAR MENU -->
+          <ul class="sidebar-menu">
+              <li class="sub-menu active">
+                  <a class="" href="index.html">
+                      <i class="icon-home"></i>
+                      <span>Inicio</span>
+                  </a>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-user"></i>
+                      <span>Administrar usuario</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="registro"> <i class="icon-plus"></i>
+                      <span>Crear Usuario</span></a></li>
+                      <li><a class="" href="usuario"> <i class="icon-search"></i>
+                      <span>Buscar Usuario</span></a></li>
+                <li><a class="" href="#"> <i class="icon-refresh"></i>
+                      <span>Actualizar usuario</span></a></li>      
+                  </ul>
+              </li>
+               <li class="sub-menu">
+                  <a href="/mercado" class="">
+                      <i class="icon-shopping-cart"></i>
+                      <span>Mercado</span>
+                      
+                  </a>
+              </li>
+              <li class="sub-menu">
+                  <a href="/cementerio:;" class="">
+                      <i class="icon-move"></i>
+                      <span>Cementerio</span>
+                      
+                  </a>
+              </li>
+               <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-flag"></i>
+                      <span>Desechos Solidos</span>
+                      
+                  </a>
+              </li>
+               <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-sitemap"></i>
+                      <span>Estado Familiar</span>
+                 
+                  </a>
+              </li>
+
+                  <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-signout"></i>
+                      <span>Salir</span>
+                 
+                  </a>
+              </li>
+
+          </ul>
+         <!-- END SIDEBAR MENU -->
+      </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <!-- BEGIN PAGE -->  
+      <div id="main-content">
+         <!-- BEGIN PAGE CONTAINER-->
+         <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->   
+            <div class="row-fluid">
+               <div class="span12">
+                  
+                  <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                   <h3 class="page-title">
+                     Dashboard
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="#">Home</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="#">Metro Lab</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li class="active">
+                           Dashboard
+                       </li>
+                      
+                   </ul>
+                   <!-- END PAGE TITLE & BREADCRUMB-->
+               </div>
+            </div>
+            <!-- END PAGE HEADER-->
+           
+          
+            
+            <!-- BEGIN PAGE CONTENT-->
+   @yield('content')
+            <!-- END PAGE CONTENT-->    
+
+         </div>
+         <!-- END PAGE CONTAINER-->
+      </div>
+      <!-- END PAGE -->  
+   </div>
+   <!-- END CONTAINER -->
+     
+     
    <!-- BEGIN FOOTER -->
    <div id="footer">
        2013 &copy; Metro Lab Dashboard.
@@ -98,69 +221,30 @@
    <!-- Load javascripts at bottom, this will reduce page load time -->
    {!!Html::script('js/jquery-1.8.3.min.js')!!}
    {!!Html::script('js/jquery.nicescroll.js')!!}
-   {!!Html::script('assets/jquery-slimscroll/jquery-ui-1.9.2.custom.min.js')!!}
-   {!!Html::script('assets/jquery-slimscroll/jquery.slimscroll.min.js')!!}
-   {!!Html::script('assets/fullcalendar/fullcalendar/fullcalendar.min.js')!!}
    {!!Html::script('assets/bootstrap/js/bootstrap.min.js')!!}
 
+    {!!Html::script('assets/bootstrap-wizard/jquery.bootstrap.wizard.min.js')!!}
+   {!!Html::script('js/jquery.blockui.js')!!}
 
    <!-- ie8 fixes -->
    <!--[if lt IE 9]>
    <script src="js/excanvas.js"></script>
    <script src="js/respond.js"></script>
    <![endif]-->
-    {!!Html::script('assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js')!!}
-    {!!Html::script('js/jquery.sparkline.js')!!}
-    {!!Html::script('assets/chart-master/Chart.js')!!}
-  
+
 
    <!--common script for all pages-->
     {!!Html::script('js/common-scripts.js')!!}
    <!--script for this page only-->
 
   
-    {!!Html::script('js/easy-pie-chart.js')!!}
-    {!!Html::script('js/sparkline-chart.js')!!}
-    {!!Html::script('js/home-page-calender.js')!!}
-    {!!Html::script('js/chartjs.js')!!}
+   {!!Html::script('js/jquery.validate.min.js')!!}
+   {!!Html::script('js/additional-methods.min.js')!!}
+   {!!Html::script('assets/chosen-bootstrap/chosen/chosen.jquery.min.js')!!}
+   {!!Html::script('assets/uniform/jquery.uniform.min.js')!!}
+   {!!Html::script('js/form-validation-script.js')!!}
    <!-- END JAVASCRIPTS --> 
 
-     <!-- BEGIN JAVASCRIPTS -->
-   <!-- Load javascripts at bottom, this will reduce page load time -->
-    {!!Html::script('js/jquery-1.8.2.min.js')!!}
-    {!!Html::script('assets/ckeditor/ckeditor.js')!!}
-    {!!Html::script('assets/bootstrap/js/bootstrap-fileupload.js')!!}
-    {!!Html::script('js/jquery.blockui.js')!!}
-
-      <!-- ie8 fixes -->
-   <!--[if lt IE 9]>
-   <script src="js/excanvas.js"></script>
-   <script src="js/respond.js"></script>
-   <![endif]-->
-    {!!Html::script('assets/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js')!!}
-    {!!Html::script('assets/chosen-bootstrap/chosen/chosen.jquery.min.js')!!}
-    {!!Html::script('assets/uniform/jquery.uniform.min.js')!!}
-    {!!Html::script('assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js')!!}
-    {!!Html::script('assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js')!!}
-    {!!Html::script('assets/clockface/js/clockface.js')!!}
-    {!!Html::script('assets/jquery-tags-input/jquery.tagsinput.min.js')!!}
-    {!!Html::script('assets/bootstrap-datepicker/js/bootstrap-datepicker.js')!!}
-    {!!Html::script('assets/bootstrap-daterangepicker/date.js')!!}
-    {!!Html::script('assets/bootstrap-daterangepicker/daterangepicker.js')!!}
-    {!!Html::script('assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js')!!}
-    {!!Html::script('assets/bootstrap-timepicker/js/bootstrap-timepicker.js')!!}
-    {!!Html::script('assets/bootstrap-inputmask/bootstrap-inputmask.min.js')!!}
-    {!!Html::script('assets/fancybox/source/jquery.fancybox.pack.js')!!}
-      <!--common script for all pages
-   
-   <!--script for this page-->
-    {!!Html::script('js/form-component.js')!!}
-
-  <!-- END JAVASCRIPTS -->  
-
-
-   
- 
    
 </body>
 <!-- END BODY -->

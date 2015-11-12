@@ -19,7 +19,7 @@ Route::get('/', function () {
 */
 Route::get('/','PageController@index' );
 
-Route::get('panel','PageController@panel' );
+Route::resource('panel','PageController@panel' );
 
 Route::get('mercado','PageController@mercado' );
 
@@ -27,7 +27,10 @@ Route::get('mercado_solicitudes','PageController@mercado_solicitudes' );
 
 Route::get('registro','PageController@registro' );
 
+Route::get('buscar_usuario','PageController@buscar_usuario' );
+
 
 Route::resource('usuario','UsuarioController' );
+
 
 

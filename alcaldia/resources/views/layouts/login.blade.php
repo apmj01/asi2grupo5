@@ -21,6 +21,7 @@
 <!-- BEGIN BODY -->
 <body class="lock" style="background-color:white">
 
+   
     @yield('content')
     
 </body>

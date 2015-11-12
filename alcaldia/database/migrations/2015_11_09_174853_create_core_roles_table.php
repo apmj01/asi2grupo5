@@ -14,7 +14,7 @@ class CreateCoreRolesTable extends Migration
     {
         Schema::create('core_roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rol');
+            $table->string('tipo_rol');
             $table->timestamps();
         });
     }

@@ -14,11 +14,12 @@ class CreateCoreUsuariosTable extends Migration
     {
         Schema::create('core_usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('usuario')->unique();
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('usuario')->unique();
             $table->string('clave', 15);
-            $table->string('rol_usuario');
+            $table->string('email')->unique();
+            $table->string('estado');
             $table->integer('core_role_id')->unsigned();
             $table->foreign('core_role_id')->references('id')->on('core_roles');
             $table->timestamps();
