@@ -1,7 +1,7 @@
 var Script = function () {
 
     $.validator.setDefaults({
-        submitHandler: function() { alert("submitted!"); }
+        submitHandler: function(form) { form.submit(); }
     });
 
     $().ready(function() {
