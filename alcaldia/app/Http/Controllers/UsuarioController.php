@@ -1,11 +1,16 @@
 <?php
 
 namespace Alcaldia\Http\Controllers;
-
+use DB;
+use Redirect;
+use Session;
+use Alcaldia\Http\Requests\UsuarioCreateRequest;
 use Illuminate\Http\Request;
-
+use Alcaldia\Core_Usuario;
+use Alcaldia\Core_Rol;
 use Alcaldia\Http\Requests;
 use Alcaldia\Http\Controllers\Controller;
+
 
 class UsuarioController extends Controller
 {
@@ -16,8 +21,17 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $users = \Alcaldia\Core_Usuario::All();
-        return view('usuario.index', compact('users'));
+
+       // $users = Core_Usuario::all();
+        
+        $users = DB::table('core_usuarios')
+            ->join('core_roles', 'core_usuarios.id_rol', '=', 'core_roles.id_rol')
+            ->select('core_usuarios.*', 'core_roles.descripcion_rol')
+            ->get();
+        
+
+        return view('usuario.index', ['users' => $users]);
+
     }
 
     /**
@@ -39,18 +53,21 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
 
-   \Alcaldia\Core_Usuario::create([
+   Core_Usuario::create([
 
-    'nombre' => $request['firstname'], 
-    'apellido' => $request['lastname'], 
-    'usuario' => $request['username'], 
-    'clave' => bcrypt($request['password']), 
-    'email' => $request['email'],
-    'estado' => $request['estado'],
-    'core_role_id' => $request['rol'],
+    'id_usuario' => $request['id_usuario'],
+    'clave_acceso' => bcrypt($request['clave_acceso']),
+    'nombre' => $request['nombre'],
+    'apellido' => $request['apellido'], 
+    'dui' => $request['dui'], 
+    'nit' => $request['nit'], 
+    'estatus' => $request['estatus'],
+    'id_rol' => $request['id_rol'],
    ]); 
 
-   return 'Usuario Registrado';
+   Session::flash('messages','Usuario Registrado Correctamente');
+
+    return Redirect::to('/registro');
    
     }
 
@@ -73,7 +90,12 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+      $user = Core_Usuario::find($id);
+
+      $roles = Core_Rol::all()->lists('descripcion_rol','id_rol');
+      $selected = array();
+
+      return view('usuario.actualizar', compact('user','roles', 'selected') );
     }
 
     /**
@@ -83,9 +105,15 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_usuario)
     {
-        //
+        $user = core_usuario::find($id_usuario);
+        $user -> fill($request->all());
+        $user -> save();
+
+         Session::flash('message','Usuario Editado Correctamente');
+
+         return Redirect::to('/usuario');
     }
 
     /**
@@ -94,8 +122,12 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_usuario)
     {
-        //
+        Core_Usuario::destroy($id_usuario);
+
+        Session::flash('message','Usuario Eliminado Correctamente');
+
+         return Redirect::to('/usuario');
     }
 }

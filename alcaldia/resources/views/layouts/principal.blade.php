@@ -33,6 +33,7 @@
     {!!Html::style('assets/bootstrap-colorpicker/css/colorpicker.css')!!}
     {!!Html::style('assets/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css')!!}
     {!!Html::style('assets/bootstrap-daterangepicker/daterangepicker.css')!!}
+    {!!Html::style('assets/data-tables/DT_bootstrap.css')!!}
 
 </head>
 <!-- END HEAD -->
@@ -104,7 +105,7 @@
          <!-- BEGIN SIDEBAR MENU -->
           <ul class="sidebar-menu">
               <li class="sub-menu active">
-                  <a class="" href="index.html">
+                 <a class="" href="{!!URL::to('/panel')!!}">
                       <i class="icon-home"></i>
                       <span>Inicio</span>
                   </a>
@@ -116,37 +117,35 @@
                       <span class="arrow"></span>
                   </a>
                   <ul class="sub">
-                      <li><a class="" href="registro"> <i class="icon-plus"></i>
+                      <li><a class="" href="{!!URL::to('/registro')!!}"> <i class="icon-plus"></i>
                       <span>Crear Usuario</span></a></li>
-                      <li><a class="" href="usuario"> <i class="icon-search"></i>
-                      <span>Buscar Usuario</span></a></li>
-                <li><a class="" href="#"> <i class="icon-refresh"></i>
-                      <span>Actualizar usuario</span></a></li>      
+                      <li><a class="" href="{!!URL::to('/usuario')!!}"> <i class="icon-search"></i>
+                      <span>Buscar Usuario</span></a></li>   
                   </ul>
               </li>
                <li class="sub-menu">
-                  <a href="/mercado" class="">
+                  <a href="{!!URL::to('/mercado')!!}" class="">
                       <i class="icon-shopping-cart"></i>
                       <span>Mercado</span>
                       
                   </a>
               </li>
               <li class="sub-menu">
-                  <a href="/cementerio:;" class="">
+                  <a href="/cementerio" class="">
                       <i class="icon-move"></i>
                       <span>Cementerio</span>
                       
                   </a>
               </li>
                <li class="sub-menu">
-                  <a href="javascript:;" class="">
+                  <a href="/desechos_solidos" class="">
                       <i class="icon-flag"></i>
                       <span>Desechos Solidos</span>
                       
                   </a>
               </li>
                <li class="sub-menu">
-                  <a href="javascript:;" class="">
+                  <a href="/estado_familiar" class="">
                       <i class="icon-sitemap"></i>
                       <span>Estado Familiar</span>
                  
@@ -209,21 +208,21 @@
       <!-- END PAGE -->  
    </div>
    <!-- END CONTAINER -->
-     
+  
      
    <!-- BEGIN FOOTER -->
    <div id="footer">
        2013 &copy; Metro Lab Dashboard.
    </div>
    <!-- END FOOTER -->
-
+   
    <!-- BEGIN JAVASCRIPTS -->
    <!-- Load javascripts at bottom, this will reduce page load time -->
    {!!Html::script('js/jquery-1.8.3.min.js')!!}
    {!!Html::script('js/jquery.nicescroll.js')!!}
    {!!Html::script('assets/bootstrap/js/bootstrap.min.js')!!}
 
-    {!!Html::script('assets/bootstrap-wizard/jquery.bootstrap.wizard.min.js')!!}
+   {!!Html::script('assets/bootstrap-wizard/jquery.bootstrap.wizard.min.js')!!} 
    {!!Html::script('js/jquery.blockui.js')!!}
 
    <!-- ie8 fixes -->
@@ -231,21 +230,46 @@
    <script src="js/excanvas.js"></script>
    <script src="js/respond.js"></script>
    <![endif]-->
+ {!!Html::script('assets/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js')!!}
+ {!!Html::script('assets/clockface/js/clockface.js')!!}
+ {!!Html::script('assets/fancybox/source/jquery.fancybox.pack.js')!!}
+ {!!Html::script('assets/uniform/jquery.uniform.min.js')!!}
+ {!!Html::script('assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js')!!}
+ {!!Html::script('assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js')!!}
+ {!!Html::script('assets/bootstrap-inputmask/bootstrap-inputmask.min.js')!!}
+ {!!Html::script('assets/jquery-tags-input/jquery.tagsinput.min.js')!!}
+ {!!Html::script('assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js')!!}
+ {!!Html::script('assets/bootstrap-timepicker/js/bootstrap-timepicker.js')!!}
+ {!!Html::script('assets/bootstrap-datepicker/js/bootstrap-datepicker.js')!!}
+ {!!Html::script('assets/bootstrap-daterangepicker/date.js')!!}
+ {!!Html::script('assets/bootstrap-daterangepicker/daterangepicker.js')!!}
+ {!!Html::script('assets/data-tables/jquery.dataTables.js')!!}
+ {!!Html::script('assets/data-tables/DT_bootstrap.js')!!}
 
 
    <!--common script for all pages-->
     {!!Html::script('js/common-scripts.js')!!}
    <!--script for this page only-->
+   
+   {!!Html::script('js/dynamic-table.js')!!} 
 
   
    {!!Html::script('js/jquery.validate.min.js')!!}
    {!!Html::script('js/additional-methods.min.js')!!}
    {!!Html::script('assets/chosen-bootstrap/chosen/chosen.jquery.min.js')!!}
-   {!!Html::script('assets/uniform/jquery.uniform.min.js')!!}
-   {!!Html::script('js/form-validation-script.js')!!}
+  
+  {!!Html::script('js/form-validation-script.js')!!} 
+  {!!Html::script('js/form-component.js')!!} 
+
+
+
+
+
+
    <!-- END JAVASCRIPTS --> 
 
    
 </body>
 <!-- END BODY -->
+
 </html>

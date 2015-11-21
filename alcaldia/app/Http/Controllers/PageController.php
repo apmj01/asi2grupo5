@@ -1,9 +1,10 @@
 <?php
 
 namespace Alcaldia\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
-
+use Alcaldia\Core_Rol;
+use Session;
 use Alcaldia\Http\Requests;
 use Alcaldia\Http\Controllers\Controller;
 
@@ -31,18 +32,25 @@ class PageController extends Controller
 
     public function mercado(){
 
-    return view('mercado');
+    return view('mercado/mercado');
    }
 
     public function mercado_solicitudes(){
 
-    return view('mercado_solicitudes');
+    return view('mercado/mercado_solicitudes');
    }
 
     public function registro(){
 
-    return view('usuario/registro');
+      $roles = Core_Rol::all()->lists('descripcion_rol','id_rol');
+      $selected = array();
+      return view('usuario.registro', compact('roles', 'selected'));
+
+
+    //return view('usuario/registro');
    }
+
+
 
      public function buscar_usuario(){
 

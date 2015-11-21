@@ -22,7 +22,7 @@
                             <div class="control-group">
                               {!!Form::label('#', '# de Solicitud', array('class' => 'control-label'))!!}
                               <div class="controls">
-                                {!!Form::text('nSolicitud',null,['class'=>'input-small','placeholder'=>'0000'])!!}
+                                {!!Form::text('nSolicitud',null,['disabled'=>'' ,'class'=>'input-small','placeholder'=>'0000'])!!}
                               </div>
                             </div>
 
@@ -50,7 +50,8 @@
                             <div class="control-group">
                               {!!Form::label('hora', 'Hora', array('class' => 'control-label'))!!}
                               <div class="controls">
-                              {!!Form::time('name', \Carbon\Carbon::now()->toTimeString(),['class'=>'input-small'])!!}
+                              
+                              {!!Form::text(null, \Carbon\Carbon::now()->toTimeString(),['class'=>'small', 'id' =>'clockface_1', 'data-format' => 'hh:mm A'])!!}
                               </div>
                             </div>
                          
@@ -78,6 +79,9 @@
                                 </div>
                             </div>
 
+                          
+                          
+
                                <div class="control-group">
                                 {!!Form::label('', '# de Personas', array('class' => 'control-label'))!!}
                                 <div class="controls">
@@ -85,13 +89,14 @@
                                 </div>
                             </div>
 
+
                             <div class="control-group">
                               {!!Form::label('fecha', 'Fecha de Inicio', array('class' => 'control-label'))!!}
                               <div class="controls">
-                                {!!Form::date('name', \Carbon\Carbon::now(),['class'=>'input-small'])!!}
+                                {!!Form::text('fechaini', \Carbon\Carbon::now()->toDateString(),['class'=>'m-ctrl-medium', 'id'=>'dp2'])!!}
                               </div>
                             </div>
-                          
+
 
                           <div class="form-actions">
                           {!!Form::submit('Enviar',['class'=>'btn btn-success'])!!} 

@@ -27,6 +27,8 @@ Route::get('mercado_solicitudes','PageController@mercado_solicitudes' );
 
 Route::get('registro','PageController@registro' );
 
+Route::get('actualizar','PageController@actualizar');
+
 Route::get('buscar_usuario','PageController@buscar_usuario' );
 
 

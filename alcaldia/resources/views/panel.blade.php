@@ -6,7 +6,7 @@
     <div class="metro-nav">
       
       <div class="metro-nav-block nav-block-orange">
-          <a data-original-title="" href="/mercado">
+          <a data-original-title="" href="{!!URL::to('/mercado')!!}">
             <i class="icon-shopping-cart"></i>
             <div class="status">Modulo Mercado</div>
           </a>
