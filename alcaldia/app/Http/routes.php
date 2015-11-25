@@ -34,5 +34,10 @@ Route::get('buscar_usuario','PageController@buscar_usuario' );
 
 Route::resource('usuario','UsuarioController' );
 
+Route::get('desechos','PageController@desechos' );
 
+Route::get('desechos_solicitudes','PageController@desechos_solicitudes' );
 
+Route::get('resolucion_solicitudes','PageController@resolucion_solicitudes' );
+
+Route::get('asignacion_solicitudes','PageController@asignacion_solicitudes' );

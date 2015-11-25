@@ -1,25 +1,27 @@
  @extends('layouts.principal')
 
  @section('content')
-<!-- BEGIN PAGE HEADER-->   
+
+ <!-- BEGIN PAGE HEADER-->   
             <div class="row-fluid">
                <div class="span12">
                   
                   <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                    <h3 class="page-title">
-                     SOLICITUDES
+                     SOLICITUDES DESECHOS SOLIDOS
                    </h3>
                    <ul class="breadcrumb">
                        <li>
-                           <a href="#">Inicio</a>
+                           <a href="{!!URL::to('/panel')!!}">Inicio</a>
                            <span class="divider">/</span>
                        </li>
-                       <li>
-                           <a href="{!!URL::to('/mercado')!!}">Menu Mercado</a>
+                         <li>
+                           <a href="{!!URL::to('/desechos')!!}">Menu Deschos Solidos</a>
                            <span class="divider">/</span>
                        </li>
+                       
                        <li class="active">
-                           Solicitudes
+                           Solicitudes Desechos Solidos
                        </li>
                       
                    </ul>
@@ -28,14 +30,13 @@
             </div>
             <!-- END PAGE HEADER-->
 
-
       <div class="row-fluid">
      <div class="row-fluid">
                 <div class="span12">
                     <!-- BEGIN SAMPLE FORMPORTLET-->
                     <div class="widget green">
                         <div class="widget-title">
-                            <h4><i class="icon-reorder"></i> Formulario de Solicitud </h4>
+                            <h4><i class="icon-reorder"></i> Formulario de Solicitud Deschos Solidos</h4>
                             
                         </div>
                         <div class="widget-body">
@@ -88,31 +89,21 @@
                             </div>
 
                             <div class="control-group">
-                                {!!Form::label('', 'Tipo Puesto', array('class' => 'control-label'))!!}
+                                {!!Form::label('', 'Solicitud', array('class' => 'control-label'))!!}
                                 
                                 <div class="controls">
-                                  {!!Form::select('size', array('Cat1' => 'Categoria 1', 'Cat2' => 'Categoria 2'), null, ['class'=>'span6','placeholder' => 'Seleccionar...'])!!}
+                                  {!!Form::select('size', array('Cat1' => 'Desechos Solidos', 'Cat2' => ' Desechos Organicos'), null, ['class'=>'span6','placeholder' => 'Seleccionar...'])!!}
                            
                                 </div>
                             </div>
 
 
-                              <div class="control-group">
-                                {!!Form::label('', 'Tipo Contrato', array('class' => 'control-label'))!!}
-                                <div class="controls">
-                                  {!!Form::select('size', array('Cat1' => 'Categoria 1', 'Cat2' => 'Categoria 2'), null, ['class'=>'span6','placeholder' => 'Seleccionar...'])!!}
-                                </div>
-                            </div>
+                              
 
                           
                           
 
-                               <div class="control-group">
-                                {!!Form::label('', '# de Personas', array('class' => 'control-label'))!!}
-                                <div class="controls">
-                                  {!!Form::select('size', array('Cat1' => 'Categoria 1', 'Cat2' => 'Categoria 2'), null, ['class'=>'span6','placeholder' => 'Seleccionar...'])!!}
-                                </div>
-                            </div>
+                           
 
 
                             <div class="control-group">

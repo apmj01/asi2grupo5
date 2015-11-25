@@ -57,6 +57,23 @@ class PageController extends Controller
     return view('buscar_usuario');
    }
 
-   
+   public function desechos(){
 
+    return view('desechos/desechos');
+   }
+
+    public function desechos_solicitudes(){
+
+    return view('desechos/desechos_solicitudes');
+   }
+   
+       public function resolucion_solicitudes(){
+
+    return view('desechos/resolucion_solicitudes');
+   }
+   
+       public function asignacion_solicitudes(){
+
+    return view('desechos/asignacion_solicitudes');
+   }
 }
