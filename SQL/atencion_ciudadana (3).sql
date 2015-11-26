@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2015 a las 00:48:58
+-- Tiempo de generación: 26-11-2015 a las 16:51:27
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.6.14
 
@@ -19,6 +19,18 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `atencion_ciudadana`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ads_solicituds`
+--
+
+CREATE TABLE `ads_solicituds` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -58,7 +70,8 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2013_11_25_105012_create_core_rols_table', 1),
 ('2014_10_12_000000_create_users_table', 1),
-('2014_10_12_100000_create_password_resets_table', 1);
+('2014_10_12_100000_create_password_resets_table', 1),
+('2015_11_25_213511_create_ads_solicituds_table', 2);
 
 -- --------------------------------------------------------
 
@@ -92,8 +105,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`, `status`, `core_rol_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Josue Bernardo', 'Arias Andrade', 'josue.arias.sv@gmail.com', '$2y$10$7E61cR44QU/LGIJGNTR.7eR8bp6CQntSeaypnbS.OIpEzBI4A7J0y', '1', 1, 'JQlsDJwYaRsOL71DoUVoEgNfKdoCEkw9TwIflyB8tON0pJjBkUiMlIfCJNQb', '2015-11-26 02:26:41', '2015-11-26 05:19:09');
+
+--
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `ads_solicituds`
+--
+ALTER TABLE `ads_solicituds`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `core_rols`
@@ -121,6 +147,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `ads_solicituds`
+--
+ALTER TABLE `ads_solicituds`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `core_rols`
 --
 ALTER TABLE `core_rols`
@@ -129,7 +160,7 @@ ALTER TABLE `core_rols`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
