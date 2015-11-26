@@ -12,11 +12,9 @@ class PageController extends Controller
 {
 
 
-public function __construct(){
-
-$this->middleware('auth', ['only' => 'panel']);
-
-}
+//public function __construct(){
+//$this->middleware('auth', ['only' => 'panel']);
+//}
 
     /**
      * Display a listing of the resource.
