@@ -10,6 +10,14 @@ use Alcaldia\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
+
+
+public function __construct(){
+
+$this->middleware('auth', ['only' => 'panel']);
+
+}
+
     /**
      * Display a listing of the resource.
      *
@@ -30,6 +38,27 @@ class PageController extends Controller
 
    }
 
+       public function cementerio(){
+
+    return view('cementerio/index');
+
+   }
+
+       public function desechos_solidos(){
+
+    return view('desechos_solidos/index');
+
+   }
+   
+
+
+     public function estado_familiar(){
+
+    return view('estado_familiar/index');
+
+   }
+
+
     public function mercado(){
 
     return view('mercado/mercado');
@@ -42,12 +71,10 @@ class PageController extends Controller
 
     public function registro(){
 
-      $roles = Core_Rol::all()->lists('descripcion_rol','id_rol');
+      $roles = Core_Rol::all()->lists('descripcion_rol','id');
       $selected = array();
       return view('usuario.registro', compact('roles', 'selected'));
 
-
-    //return view('usuario/registro');
    }
 
 
@@ -57,23 +84,6 @@ class PageController extends Controller
     return view('buscar_usuario');
    }
 
-   public function desechos(){
-
-    return view('desechos/desechos');
-   }
-
-    public function desechos_solicitudes(){
-
-    return view('desechos/desechos_solicitudes');
-   }
    
-       public function resolucion_solicitudes(){
 
-    return view('desechos/resolucion_solicitudes');
-   }
-   
-       public function asignacion_solicitudes(){
-
-    return view('desechos/asignacion_solicitudes');
-   }
 }

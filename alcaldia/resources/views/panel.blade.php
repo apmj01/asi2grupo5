@@ -12,19 +12,19 @@
           </a>
       </div>
       <div class="metro-nav-block nav-block-purple">
-          <a data-original-title="" href="#">
+          <a data-original-title="" href="{!!URL::to('/cementerio')!!}">
             <i class="icon-move"></i>
             <div class="status">Modulo Cementerio</div>
           </a>
       </div>
       <div class="metro-nav-block nav-block-blue">
-          <a data-original-title="" href="#">
+          <a data-original-title="" href="{!!URL::to('/desechos_solidos')!!}">
             <i class="icon-flag"></i>
             <div class="status">Modulo Desechos Solidos</div>
           </a>
       </div>
       <div class="metro-nav-block nav-block-green">
-          <a data-original-title="" href="#">
+          <a data-original-title="" href="{!!URL::to('/estado_familiar')!!}">
             <i class="icon-sitemap"></i>
             <div class="status">Modulo de Estado Familiar</div>
           </a>

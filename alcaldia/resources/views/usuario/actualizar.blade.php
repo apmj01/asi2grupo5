@@ -18,7 +18,7 @@
                         <div class="widget-body form">
 
                             <!-- BEGIN FORM-->
-                            {!!Form::model($user, array('route' => array('usuario.update', $user->id_usuario), 'method' => 'PUT', 'class' => 'cmxform form-horizontal', 'novalidate' => 'novalidate', 'id' => 'signupForm'))!!}
+                            {!!Form::model($user, array('route' => array('usuario.update', $user->id), 'method' => 'PUT', 'class' => 'cmxform form-horizontal', 'novalidate' => 'novalidate', 'id' => 'signupForm'))!!}
 
                                 <div class="alert alert-info">
                                     <button class="close" data-dismiss="alert">×</button>

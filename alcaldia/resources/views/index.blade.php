@@ -2,7 +2,17 @@
 
 @section('content')
 
+@if(Session::has('message'))
+<div class="alert alert-block alert-error fade in">
+    <button data-dismiss="alert" class="close" type="button">×</button>
+    <h4 class="alert-heading">ERROR DE ACCESO</h4>
+     <br>
+    <p>
+         {{Session::get('message')}}
+    </p>
 
+</div>
+@endif
 
 <div class="lock-header">
         <!-- BEGIN LOGO -->
@@ -19,11 +29,11 @@
             </div>
         </div>
      
-            {!!Form::open(['url' => 'panel', 'method'=>'POST'])!!}
-
+           {!!Form::open(['route' => 'log.store', 'method'=>'POST'])!!}
+         
                 <div class="metro double-size green">
                     <div class="input-append lock-input">
-                        {!!Form::text('name',null,['placeholder'=>'Usuario'])!!}
+                        {!!Form::text('email',null,['placeholder'=>'email'])!!}
                     </div>
                 </div>
 
@@ -39,13 +49,13 @@
 
                 <div class="login-footer">
 
-                    <div class="remember-hint pull-left" style="color:black">
+                 <!--   <div class="remember-hint pull-left" style="color:black">
 
                         {!!Form::checkbox('Recordar')!!}
 
                          Recordar Usuario
 
-                    </div>
+                    </div> -->
 
                     <div class="forgot-hint pull-right" >
                         <a style="color:black" id="forget-password" class="" href="javascript:;">Olvido su Clave?</a>

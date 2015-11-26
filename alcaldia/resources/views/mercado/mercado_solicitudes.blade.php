@@ -1,32 +1,7 @@
  @extends('layouts.principal')
 
  @section('content')
-<!-- BEGIN PAGE HEADER-->   
-            <div class="row-fluid">
-               <div class="span12">
-                  
-                  <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-                   <h3 class="page-title">
-                     SOLICITUDES
-                   </h3>
-                   <ul class="breadcrumb">
-                       <li>
-                           <a href="#">Inicio</a>
-                           <span class="divider">/</span>
-                       </li>
-                       <li>
-                           <a href="{!!URL::to('/mercado')!!}">Menu Mercado</a>
-                           <span class="divider">/</span>
-                       </li>
-                       <li class="active">
-                           Solicitudes
-                       </li>
-                      
-                   </ul>
-                   <!-- END PAGE TITLE & BREADCRUMB-->
-               </div>
-            </div>
-            <!-- END PAGE HEADER-->
+
 
 
       <div class="row-fluid">

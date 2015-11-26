@@ -70,14 +70,14 @@
                        <!-- BEGIN USER LOGIN DROPDOWN -->
                        <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                               <img src="img/avatar1_small.jpg" alt="">
-                               <span class="username">Jhon Doe</span>
+                            <!--    <img src="img/avatar1_small.jpg" alt=""> -->
+                               <span class="username">{!!Auth::user()->name!!}</span>
                                <b class="caret"></b>
                            </a>
                            <ul class="dropdown-menu extended logout">
                                <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
                                <li><a href="#"><i class="icon-cog"></i> My Settings</a></li>
-                               <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                               <li><a href="/logout"><i class="icon-key"></i> Log Out</a></li>
                            </ul>
                        </li>
                        <!-- END USER LOGIN DROPDOWN -->
@@ -138,7 +138,7 @@
                   </a>
               </li>
                <li class="sub-menu">
-                  <a href="/desechos" class="">
+                  <a href="/desechos_solidos" class="">
                       <i class="icon-flag"></i>
                       <span>Desechos Solidos</span>
                       
@@ -169,7 +169,32 @@
       <div id="main-content">
          <!-- BEGIN PAGE CONTAINER-->
          <div class="container-fluid">
-           
+            <!-- BEGIN PAGE HEADER-->   
+            <div class="row-fluid">
+               <div class="span12">
+                  
+                  <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                   <h3 class="page-title">
+                     Dashboard
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="#">Home</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="#">Metro Lab</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li class="active">
+                           Dashboard
+                       </li>
+                      
+                   </ul>
+                   <!-- END PAGE TITLE & BREADCRUMB-->
+               </div>
+            </div>
+            <!-- END PAGE HEADER-->
            
           
             

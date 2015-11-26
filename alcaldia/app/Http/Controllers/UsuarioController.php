@@ -6,7 +6,7 @@ use Redirect;
 use Session;
 use Alcaldia\Http\Requests\UsuarioCreateRequest;
 use Illuminate\Http\Request;
-use Alcaldia\Core_Usuario;
+use Alcaldia\User;
 use Alcaldia\Core_Rol;
 use Alcaldia\Http\Requests;
 use Alcaldia\Http\Controllers\Controller;
@@ -23,14 +23,14 @@ class UsuarioController extends Controller
     {
 
        // $users = Core_Usuario::all();
-        
-        $users = DB::table('core_usuarios')
-            ->join('core_roles', 'core_usuarios.id_rol', '=', 'core_roles.id_rol')
-            ->select('core_usuarios.*', 'core_roles.descripcion_rol')
-            ->get();
-        
 
-        return view('usuario.index', ['users' => $users]);
+
+        $users = DB::table('users')
+            ->join('core_rols', 'users.core_rol_id', '=', 'core_rols.id')
+            ->select('users.*', 'core_rols.descripcion_rol')
+            ->get();
+
+          return view('usuario.index', ['users' => $users]);
 
     }
 
@@ -53,16 +53,14 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
 
-   Core_Usuario::create([
+   User::create([
 
-    'id_usuario' => $request['id_usuario'],
-    'clave_acceso' => bcrypt($request['clave_acceso']),
-    'nombre' => $request['nombre'],
-    'apellido' => $request['apellido'], 
-    'dui' => $request['dui'], 
-    'nit' => $request['nit'], 
-    'estatus' => $request['estatus'],
-    'id_rol' => $request['id_rol'],
+    'name' => $request['name'],
+    'lastname' => $request['lastname'], 
+    'password' => bcrypt($request['password']),
+    'email' => $request['email'], 
+    'status' => $request['status'],
+    'core_rol_id' => $request['core_rol_id'],
    ]); 
 
    Session::flash('messages','Usuario Registrado Correctamente');
@@ -90,12 +88,12 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-      $user = Core_Usuario::find($id);
 
-      $roles = Core_Rol::all()->lists('descripcion_rol','id_rol');
-      $selected = array();
-
-      return view('usuario.actualizar', compact('user','roles', 'selected') );
+     $user = User::find($id);
+     $roles = Core_Rol::all()->lists('descripcion_rol','id');
+     $selected = array();
+  
+      return view('usuario.actualizar', compact('user','roles', 'selected'));
     }
 
     /**
@@ -105,9 +103,9 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_usuario)
+    public function update(Request $request, $id)
     {
-        $user = core_usuario::find($id_usuario);
+        $user = User::find($id);
         $user -> fill($request->all());
         $user -> save();
 
@@ -124,7 +122,7 @@ class UsuarioController extends Controller
      */
     public function destroy($id_usuario)
     {
-        Core_Usuario::destroy($id_usuario);
+        User::destroy($id_usuario);
 
         Session::flash('message','Usuario Eliminado Correctamente');
 

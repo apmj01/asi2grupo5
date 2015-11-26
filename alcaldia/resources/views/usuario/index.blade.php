@@ -47,12 +47,12 @@
                                      <tbody>
                                      <tr class="odd gradeX">
                                         
-                                         <td>{{$user -> nombre}}</td>
-                                        <td>{{$user -> apellido}}</td>
-                                         <td>{{$user -> id_usuario}}</td>
+                                         <td>{{$user -> name}}</td>
+                                        <td>{{$user -> lastname}}</td>
+                                         <td>{{$user -> email}}</td>
 
                                           
-                                         @if ($user -> estatus == "1")
+                                         @if ($user -> status == "1")
 
                                             <td>Activo</td> 
                                         @else
@@ -63,9 +63,9 @@
                                          <td>{{$user -> descripcion_rol}}</td>  
                                                                       
 
-                                      <td> {!!link_to_route('usuario.edit', $title = 'Actualizar', $parameters = array($user->id_usuario), $attributes = array('class'=>'btn btn-warning'))!!} </td>
+                                      <td> {!!link_to_route('usuario.edit', $title = 'Actualizar', $parameters = array($user->id), $attributes = array('class'=>'btn btn-warning'))!!} </td>
                                          <td>
-                                           {!!Form::open(array('route' => array('usuario.destroy', $user->id_usuario), 'method' => 'DELETE'))!!}
+                                           {!!Form::open(array('route' => array('usuario.destroy', $user->id), 'method' => 'DELETE'))!!}
                                             {!!Form::submit('Eliminar',['class' =>'btn btn-danger'])!!}
                                             {!!Form::close()!!}
                                      
